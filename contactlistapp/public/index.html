@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app='demo'> 
+<head>
+	<!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<script type="text/javascript" src = "/node_modules/angular/angular.js"></script>
+   
+		<script src="public/controllers/controller.js">  </script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js">  </script>
+	<script src="/js/controllers/meetups-controller.js">  </script>-->
+
+	</head>
+	<body> 
+		
+		
+			<div class="container" ng-controller='Appctrl'>
+				<h1>CONTACT LIST APP</h1>
+			<table CLASS="table">    
+				<thead>
+                   <tr>
+                   	<tH>NAME </TH>
+                   	<tH>EMAIL </TH>	
+          		    	<tH>CONTACT</TH>
+                    <tH>ACTION</TH>
+                   </tr>
+           <tbody>
+                   	<tr >
+                   	<td><input class="form-control" ng-model="newuser.name"></Td>
+                   	<td><input class="form-control" ng-model="newuser.email"></Td>	
+          			<td><input class="form-control" ng-model="newuser.contact_no"> </Td>
+          			<td><button class="btn btn-primary" ng-click="addContacts()">ADD CONTACT </button> </Td>
+                  <td><button class="btn btn-info" ng-click="update(newuser._id)">UPDATE CONTACT </button> </Td>
+                   </tr>
+                    <tr ng-repeat='con in contacts'>
+                   	<td>{{con.name}} </Td>
+                   	<td>{{con.email}} </Td>	
+          			   <td>{{con.contact_no}} </Td>
+                  <td><button clas="btn btn-danger" ng-click="removeid(con._id)" >REMOVE</button></Td>
+                  <td><button class="btn btn-warning" ng-click="edit(con._id)" >Edit contact</button></Td>
+                   </tr>
+        </tbody>
+
+                 </thead>
+            </table>     
+			</div>
+        
+
+	</body>
+
+</html>
